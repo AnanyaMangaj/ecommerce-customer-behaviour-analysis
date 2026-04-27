@@ -1,98 +1,184 @@
-# 🛒 Ecommerce Customer Behaviour Analysis & Recommendation System
+<div align="center">
 
-## 📌 Project Overview
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=200&section=header&text=🛒%20Customer%20Behaviour%20Analysis&fontSize=36&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=E-Commerce%20Intelligence%20Platform&descAlignY=58&descAlign=50" width="100%"/>
 
-This project focuses on analyzing **customer purchasing behaviour** in an e-commerce platform using **Unsupervised Machine Learning** and **Association Rule Mining**.
+<br/>
 
-The system helps in:
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML%20Models-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 
-- Segmenting customers into meaningful groups
-- Understanding customer behaviour patterns
-- Discovering product associations for recommendations
-- Visualizing insights through an interactive **Streamlit dashboard**
+<br/>
 
-This project is useful for businesses to improve:
+> **Segment customers. Discover patterns. Drive revenue.**  
+> An end-to-end unsupervised ML pipeline with clustering, association rule mining, and an interactive Streamlit dashboard.
 
-- Customer targeting
-- Personalized recommendations
-- Cross-selling strategies
-- Business decision-making
+<br/>
 
----
+[🚀 Quick Start](#-quick-start) • [📊 Features](#-features) • [🤖 Models](#-machine-learning-models) • [📷 Dashboard](#-streamlit-dashboard) • [📁 Structure](#-project-structure) • [🔮 Future Work](#-future-enhancements)
 
-# 🎯 Objectives
-
-The main objectives of this project are:
-
-1. **Analyze customer behaviour** using transaction and browsing data
-2. **Segment customers** using clustering algorithms
-3. **Find product recommendation patterns** using association rules
-4. **Build an interactive dashboard** for easy analysis and presentation
+</div>
 
 ---
 
-# 🧠 Problem Statement
+## 🧭 Project Overview
 
-In e-commerce platforms, customers have different purchasing habits, preferences, and engagement levels.
+E-commerce platforms generate massive amounts of behavioural data — but raw data alone doesn't drive decisions. This project transforms customer transaction records into **actionable intelligence** using:
 
-Traditional methods fail to identify:
+- 🔍 **4 Clustering Algorithms** to identify distinct customer personas
+- 🛒 **3 Association Rule Algorithms** to power product recommendations  
+- 📊 **Interactive Streamlit Dashboard** for real-time business insights
 
-- High-value customers
-- Low-engagement users
-- Product combinations frequently bought together
-
-This project solves that problem by using:
-
-- **Customer segmentation**
-- **Pattern discovery**
-- **Recommendation rule generation**
+Whether you're a data scientist, analyst, or business strategist — this project gives you the tools to understand *who* your customers are and *what* they buy together.
 
 ---
 
-# 🗂️ Project Workflow
+## ✨ Features
 
-The project follows this pipeline:
-
-1. Data Collection
-2. Data Preparation
-3. Data Wrangling
-4. Exploratory Data Analysis (EDA)
-5. Feature Engineering
-6. Customer Segmentation (Clustering)
-7. Product Recommendation (Association Rules)
-8. Streamlit Dashboard Deployment
+| Feature | Description |
+|---|---|
+| 🧹 **Smart Preprocessing** | Handles missing values, duplicates, format errors & text inconsistencies |
+| 🔬 **EDA** | Product trends, spend distributions, engagement patterns |
+| ⚙️ **Feature Engineering** | Customer-level aggregations: AvgSpend, TotalItems, AvgSession, AvgRating |
+| 🤖 **Multi-Model Clustering** | K-Means, Hierarchical, DBSCAN, GMM with Silhouette Score evaluation |
+| 🧺 **Recommendation Engine** | Apriori, ECLAT, FP-Growth association rules with Support/Confidence/Lift |
+| 📊 **Live Dashboard** | Streamlit app with filters, KPI cards, charts, and downloadable results |
 
 ---
 
-# 📁 Project Structure
+## 🗂️ Dataset
+
+The dataset (`data/ecommerce_data.csv`) contains customer transaction and behavioural records:
+
+```
+CustomerID · TransactionID · Product · Category · Price · Quantity
+PaymentType · City · Device · SessionDuration · DiscountApplied
+ShippingType · Rating · ReviewText · TransactionDate
+```
+
+> 📌 All preprocessing steps are documented in `notebooks/ecommerce_analysis.ipynb`
+
+---
+
+## 🤖 Machine Learning Models
+
+### 🔷 Customer Segmentation — Clustering
+
+<table>
+<tr>
+<td width="50%">
+
+**K-Means Clustering**  
+Groups customers into *k* fixed segments based on behavioural similarity. Fast and interpretable.
+
+**Hierarchical Clustering**  
+Builds a tree of customer groups. Useful for exploring nested relationships.
+
+</td>
+<td width="50%">
+
+**DBSCAN**  
+Identifies dense customer clusters and flags outliers/noise automatically.
+
+**Gaussian Mixture Model (GMM)**  
+Probabilistic soft-clustering for flexible, overlapping group assignment.
+
+</td>
+</tr>
+</table>
+
+> 📏 **Evaluation:** All models are compared using the **Silhouette Score**
+
+---
+
+### 🛒 Product Recommendations — Association Rules
+
+| Algorithm | Approach | Key Strength |
+|---|---|---|
+| **Apriori** | Breadth-first frequent itemset mining | Simple, interpretable rules |
+| **ECLAT** | Vertical data format (tidset intersections) | Fast for dense datasets |
+| **FP-Growth** | Compressed FP-tree structure | No candidate generation overhead |
+
+**Sample Rules Discovered:**
+
+```
+📱 Mobile     →  🎧 Earphones     (Lift: high)
+💻 Laptop     →  🖱️  Mouse         (Confidence: strong)
+👗 Dress      →  👠 Heels          (Support: frequent)
+👟 Shoes      →  🧦 Socks          (Lift: strong)
+```
+
+> 📏 **Metrics:** Support · Confidence · Lift
+
+---
+
+## 📊 Streamlit Dashboard
+
+The interactive dashboard (`app/streamlit_app.py`) gives you:
+
+- 🔍 **Sidebar Filters** — Select customer cluster dynamically
+- 📌 **KPI Cards** — Total Customers, Avg Spend, Total Items, Avg Rating
+- 📄 **Data Table** — Filterable customer-level segment view
+- 📈 **Histograms & Boxplots** — Spend distributions and item quantities
+- 📊 **Cluster Comparison Chart** — Avg spend across all clusters
+- ⬇️ **CSV Download** — Export filtered data instantly
+- 🛍️ **Recommendation Panel** — Display product association rules
+
+---
+
+## 🗺️ Project Workflow
+
+```
+Raw Data  ──►  Preprocessing  ──►  EDA  ──►  Feature Engineering
+                                                      │
+                    ┌─────────────────────────────────┘
+                    ▼
+            Customer Segmentation         Product Recommendations
+          ┌─────────────────────┐       ┌──────────────────────────┐
+          │  K-Means            │       │  Apriori                 │
+          │  Hierarchical       │       │  ECLAT                   │
+          │  DBSCAN             │       │  FP-Growth               │
+          │  GMM                │       └──────────────────────────┘
+          └─────────────────────┘                  │
+                    │                              │
+                    └──────────────┬───────────────┘
+                                   ▼
+                        Streamlit Dashboard
+```
+
+---
+
+## 📁 Project Structure
 
 ```bash
 ecommerce-customer-behaviour-analysis/
 │
-├── data/
-│   └── ecommerce_data.csv
+├── 📂 data/
+│   └── ecommerce_data.csv              # Raw dataset
 │
-├── notebooks/
-│   └── ecommerce_analysis.ipynb
+├── 📂 notebooks/
+│   └── ecommerce_analysis.ipynb        # Full analysis pipeline
 │
-├── models/
+├── 📂 models/
 │   ├── kmeans_model.pkl
 │   ├── hierarchical_model.pkl
 │   ├── dbscan_model.pkl
 │   └── gmm_model.pkl
 │
-├── association_rules/
+├── 📂 association_rules/
 │   ├── apriori_rules.csv
 │   ├── fp_growth_rules.csv
 │   └── eclat_rules.csv
 │
-├── results/
-│   ├── customer_segments.csv
-│   ├── cluster_visualization.png
-│   └── recommendation_examples.txt
+├── 📂 results/
+│   ├── customer_segments.csv           # Segmentation output
+│   └── cluster_visualization.png       # Cluster scatter plot
 │
-├── app/
-│   └── streamlit_app.py
+├── 📂 app/
+│   └── streamlit_app.py                # Interactive dashboard
 │
 ├── requirements.txt
 └── README.md
@@ -100,320 +186,109 @@ ecommerce-customer-behaviour-analysis/
 
 ---
 
-# 📊 Dataset Description
+## 🚀 Quick Start
 
-The dataset contains customer transaction and behavioural information such as:
-
-- `CustomerID`
-- `TransactionID`
-- `Product`
-- `Category`
-- `Price`
-- `Quantity`
-- `PaymentType`
-- `City`
-- `Device`
-- `SessionDuration`
-- `DiscountApplied`
-- `ShippingType`
-- `Rating`
-- `ReviewText`
-- `TransactionDate`
-
----
-
-# ⚠️ Data Challenges Handled
-
-During preprocessing, the following issues were addressed:
-
-- Missing Values
-- Duplicate Rows
-- Wrong Data Formats
-- Inconsistent Data Entries
-
----
-
-# 🧹 Data Preprocessing
-
-## 1. Handling Missing Values
-Missing values were filled using:
-
-- Mean (for numerical columns)
-- Mode / default values (for categorical columns)
-
-## 2. Removing Duplicate Rows
-Duplicate customer transaction records were removed.
-
-## 3. Correcting Data Types
-Columns such as dates and numerical values were converted into proper formats.
-
-## 4. Standardizing Text Data
-Text fields like product names and categories were cleaned for consistency.
-
----
-
-# 📈 Exploratory Data Analysis (EDA)
-
-EDA was performed to understand customer and product behaviour through:
-
-- Top-selling products
-- Purchase distribution
-- Customer engagement analysis
-- Average spending behaviour
-- Product frequency analysis
-
-### Sample visualizations:
-- Product count plots
-- Spend distribution histograms
-- Cluster scatter plots
-- Cluster-wise comparison charts
-
----
-
-# 🛠️ Feature Engineering
-
-Customer-level features were created by aggregating transaction data.
-
-### Important engineered features:
-
-- **AvgSpend** → Average money spent by customer
-- **TotalItems** → Total quantity purchased
-- **AvgSession** → Average session duration
-- **AvgRating** → Average product rating given
-
-These features were used for clustering.
-
----
-
-# 🤖 Machine Learning Models Used
-
-## 1. Customer Segmentation (Clustering)
-
-The following **Unsupervised Learning algorithms** were applied:
-
-### 🔹 K-Means Clustering
-Used to segment customers into fixed groups based on behavioural similarity.
-
-### 🔹 Hierarchical Clustering
-Used to create customer group hierarchies.
-
-### 🔹 DBSCAN
-Used to identify dense customer groups and noise points.
-
-### 🔹 Gaussian Mixture Model (GMM)
-Used for probabilistic clustering and flexible group assignment.
-
----
-
-# 📌 Why Multiple Clustering Algorithms?
-
-Different clustering algorithms were used to compare results and determine the best customer segmentation approach.
-
-### Evaluation Metric Used:
-- **Silhouette Score**
-
-This helps in measuring how well-separated the customer clusters are.
-
----
-
-# 🧺 Product Recommendation System
-
-To recommend products, **Association Rule Mining** was used.
-
-This helps discover products that are frequently bought together.
-
-### Example rules:
-- Mobile → Earphones
-- Laptop → Mouse
-- Dress → Heels
-- Shoes → Socks
-
----
-
-# 🔗 Association Rule Algorithms Used
-
-## 1. Apriori
-Finds frequent itemsets and generates product association rules.
-
-## 2. ECLAT
-Uses a vertical dataset format to discover frequent product combinations.
-
-## 3. FP-Growth
-Efficiently mines frequent patterns without generating too many candidate itemsets.
-
----
-
-# 📏 Rule Evaluation Metrics
-
-Association rules were evaluated using:
-
-- **Support** → Frequency of occurrence
-- **Confidence** → Likelihood of buying consequent product
-- **Lift** → Strength of the association
-
----
-
-# 📊 Output Files Generated
-
-## `results/customer_segments.csv`
-Contains customer segmentation results.
-
-## `results/cluster_visualization.png`
-Contains cluster graph visualization.
-
-## `results/recommendation_examples.txt`
-Contains sample product recommendation rules.
-
-## `association_rules/*.csv`
-Contains generated association rule outputs for each algorithm.
-
----
-
-# 🌐 Streamlit Dashboard
-
-An interactive **Streamlit dashboard** was built to visualize:
-
-- Customer clusters
-- KPI metrics
-- Behaviour insights
-- Cluster comparisons
-- Product recommendation rules
-
----
-
-# ▶️ How to Run the Project
-
-## Step 1: Clone or Download the Project
+### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-link>
+git clone https://github.com/your-username/ecommerce-customer-behaviour-analysis.git
 cd ecommerce-customer-behaviour-analysis
 ```
 
-If you are not using GitHub, simply open the folder in **Jupyter Lab** or **VS Code**.
-
----
-
-## Step 2: Install Required Libraries
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Or install manually:
+<details>
+<summary>Or install manually</summary>
 
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn mlxtend streamlit
 ```
 
----
+</details>
 
-## Step 3: Run Jupyter Notebook
+### 3. Run the Notebook
 
-Open Jupyter Lab and run:
+Open Jupyter Lab and execute:
 
-```bash
+```
 notebooks/ecommerce_analysis.ipynb
 ```
 
-This notebook will:
+This will clean data → perform EDA → engineer features → train models → generate association rules → save outputs.
 
-- Clean the dataset
-- Perform EDA
-- Create customer features
-- Train clustering models
-- Generate association rules
-- Save output files
-
----
-
-## Step 4: Run the Streamlit App
+### 4. Launch the Dashboard
 
 ```bash
 streamlit run app/streamlit_app.py
 ```
 
-After running, open the local URL shown in terminal:
-
-```bash
-http://localhost:8501
-```
+Then open → **http://localhost:8501**
 
 ---
 
-# 💻 Technologies Used
+## 💡 Business Questions This Solves
 
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **Seaborn**
-- **Scikit-Learn**
-- **Mlxtend**
-- **Streamlit**
-- **Jupyter Lab**
+| Question | Solution |
+|---|---|
+| Who are our highest-value customers? | K-Means / GMM cluster profiles |
+| Which customers are disengaged? | DBSCAN outlier detection |
+| What products are bought together? | Apriori / FP-Growth rules |
+| What should we cross-sell? | Confidence-based recommendations |
+| Which segment to target with offers? | Silhouette-optimised clusters |
 
 ---
 
-# 📷 Dashboard Features
+## 🔮 Future Enhancements
 
-The Streamlit dashboard includes:
-
-- Sidebar filters
-- Cluster selection
-- KPI cards
-- Customer data table
-- Histograms and boxplots
-- Cluster comparison charts
-- Download filtered data option
-- Product recommendation display
+- [ ] 🔄 Real-time recommendation engine
+- [ ] 📈 Customer Lifetime Value (CLV) prediction
+- [ ] 🎯 Personalised marketing campaign integration
+- [ ] 🧠 Deep learning recommendation system (NCF / Transformers)
+- [ ] ☁️ Streamlit Cloud deployment
+- [ ] 📊 Power BI / Tableau integration
 
 ---
 
-# 📌 Sample Business Insights
+## 🛠️ Tech Stack
 
-This project can help an e-commerce business answer questions like:
+<div align="center">
 
-- Who are the highest spending customers?
-- Which customers are less engaged?
-- Which products are frequently bought together?
-- What products should be recommended together?
-- Which customer segment should be targeted with offers?
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat-square&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat-square)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Mlxtend](https://img.shields.io/badge/Mlxtend-Association%20Rules-blue?style=flat-square)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
----
-
-# 🚀 Future Enhancements
-
-This project can be improved further by adding:
-
-- Real-time recommendation engine
-- Customer Lifetime Value (CLV) prediction
-- Personalized marketing campaigns
-- Deep learning recommendation system
-- Streamlit Cloud deployment
-- Power BI integration
+</div>
 
 ---
 
-# 📚 Learning Outcomes
+## 👩‍💻 Author
 
-By completing this project, the following concepts are demonstrated:
-
-- Data preprocessing
-- Feature engineering
-- Unsupervised learning
-- Clustering algorithms
-- Association rule mining
-- Data visualization
-- Dashboard deployment
-
----
-
-# 👨‍💻 Author
+<div align="center">
 
 **Ananya Mangaj**  
-AI / Data Science Project
+*AI / Data Science*
 
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/your-username)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/your-profile)
 
+</div>
 
 ---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=100&section=footer" width="100%"/>
+
+*⭐ Star this repo if you found it useful!*
+
+</div>

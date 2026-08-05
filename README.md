@@ -28,7 +28,7 @@
 
 E-commerce platforms generate massive amounts of behavioural data — but raw data alone doesn't drive decisions. This project transforms customer transaction records into **actionable intelligence** using:
 
-- 🔍 **4 Clustering Algorithms** to identify distinct customer personas
+- 🔍 **4 Clustering Algorithms** to identify distinct customer personal
 - 🛒 **3 Association Rule Algorithms** to power product recommendations  
 - 📊 **Interactive Streamlit Dashboard** for real-time business insights
 

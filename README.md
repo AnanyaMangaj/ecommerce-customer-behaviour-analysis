@@ -34,7 +34,7 @@ E-commerce platforms generate massive amounts of behavioural data — but raw da
 
 Whether you're a data scientist, analyst, or business strategist — this project gives you the tools to understand *who* your customers are and *what* they buy together.
 
----
+--- 
 
 ## ✨ Features 
 

@@ -47,7 +47,7 @@ Whether you're a data scientist, analyst, or business strategist — this projec
 | 🧺 **Recommendation Engine** | Apriori, ECLAT, FP-Growth association rules with Support/Confidence/Lift |
 | 📊 **Live Dashboard** | Streamlit app with filters, KPI cards, charts, and downloadable results |
 
----
+--- 
 
 ## 🗂️ Dataset
 

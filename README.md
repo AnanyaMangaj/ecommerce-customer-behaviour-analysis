@@ -49,7 +49,7 @@ Whether you're a data scientist, analyst, or business strategist — this projec
 
 --- 
 
-## 🗂️ Dataset
+## 🗂️ Dataset 
 
 The dataset (`data/ecommerce_data.csv`) contains customer transaction and behavioural records:
 

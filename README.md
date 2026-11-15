@@ -23,7 +23,7 @@
 </div>  
        
 ---       
-
+      
 ## 🧭 Project Overview               
 
 E-commerce platforms generate massive amounts of behavioural data — but raw data alone doesn't drive decisions. This project transforms customer transaction records into **actionable intelligence** using:      

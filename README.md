@@ -30,7 +30,7 @@ E-commerce platforms generate massive amounts of behavioural data — but raw da
        
 - 🔍 **4 Clustering Algorithms** to identify distinct customer personal.    
 - 🛒 **3 Association Rule Algorithms** to power product recommendations  
-- 📊 **Interactive Streamlit Dashboard** for real-time business insights
+- 📊 **Interactive Streamlit Dashboard** for real-time business insights.    
 
 Whether you're a data scientist, analyst, or business strategist — this project gives you the tools to understand *who* your customers are and *what* they buy together.
 

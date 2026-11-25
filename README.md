@@ -11,7 +11,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
  
-<br/>
+<br/>     
 
 > **Segment customers. Discover patterns. Drive revenue.**         
 > An end-to-end unsupervised ML pipeline with clustering, association rule mining, and an interactive Streamlit dashboard.

@@ -39,7 +39,7 @@ Whether you're a data scientist, analyst, or business strategist — this projec
 ## ✨ Features      
 
 | Feature | Description |
-|---|---|
+|---|---|      
 | 🧹 **Smart Preprocessing** | Handles missing values, duplicates, format errors & text inconsistencies |
 | 🔬 **EDA** | Product trends, spend distributions, engagement patterns |
 | ⚙️ **Feature Engineering** | Customer-level aggregations: AvgSpend, TotalItems, AvgSession, AvgRating |
